@@ -3,7 +3,7 @@ import LiItem from './LiElement'
 import { FaSearch,FaBars } from 'react-icons/fa';
 
 
-function navbar(){
+function Navbar(){
     return(
       <>
         <div className='flex gap-11  justify-center  items-center w-full text-white z-10 fixed'>
@@ -34,4 +34,4 @@ function navbar(){
     );
 }
 
-export default navbar;
+export default Navbar;

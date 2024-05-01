@@ -1,16 +1,14 @@
-import React from 'react';
-import BackgroundVideo from "../assets/Background.mp4";
+import Navbar from '../components/navbar';
+import Footer from "./user/footer"
+import Card from "../components/card"
+import Background from "../components/Background";
 
-function Home() {
+const  Home=()=> {
   return (
+    
     <div>
-      <video
-        autoPlay
-        muted
-        loop
-        src={BackgroundVideo}
-        className='fixed inset-0 w-full h-full object-cover z-[-1]'
-      ></video>
+   < Navbar/>
+      <Background/>
       <div className='main z-10  bg-black  opacity-45'>
         <div className='firstPage z-20'>
           <div className="flex h-screen flex-col items-center justify-center font-['Lucida_Sans_Unicode','Lucida_Grande',Verdana,Arial,Helvetica,sans-serif] text-[62.5%] leading-none opacity-100">
@@ -43,8 +41,8 @@ function Home() {
           </div>
         </div>
       </div>
-      
-      {/* <div className='  mt-2 h-96 bg-black  opacity-45'  ></div> */}
+    <Card/>
+      <Footer/>
     </div>
   );
 }

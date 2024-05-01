@@ -1,179 +1,270 @@
-import React from 'react';
-import Image from '../assets/movies/card-img/0ffc8aaff9c98549641b706035981be3f257d91f5e4519f8788b2fb7490ce74e._UR1920,1080_SX1080_FMwebp_.jpg'
+import { Link } from "react-router-dom";
+import { FaSmile } from "react-icons/fa";
+import { AiOutlineLike } from "react-icons/ai";
 
-function ProductCard() {
+const Card = ({ children }) => {
   return (
-    
-    <div className='flex flex-wrap gap-5 justify-around'>
-    <div className="  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-     <img src={Image} alt="" />
-    </a>
-    <div className="px-5 pb-5">
-      <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          KGF
-        </h5>
-      </a>
-      <div className="flex items-center mt-2.5 mb-5">
-        <div className="flex items-center space-x-1 rtl:space-x-reverse">
-          {[...Array(5)].map((_, i) => (
-            <svg
-              key={i}
-              className="w-4 h-4 text-yellow-300"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-              />
-            </svg>
-          ))}
-          <svg
-            className="w-4 h-4 text-gray-200 dark:text-gray-600"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 22 20"
-          >
-            <path
-              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375 a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2 a1.523 1.523 0 0 0 .387-1.575Z"
-            />
-          </svg>
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-            5.0
-          </span>
+    <div className="flex gap-4 flex-wrap w-full h-full bg-fixed bg-cover bg-center mb-12">
+      {/*card start from here  */}
+      <div className="mx-auto mt-16 w-[300px] h-[520px] bg-[#1e1b26] rounded-lg shadow-2xl relative">
+        <div className="absolute top-1 right-3 text-[#fe4141] text-4xl">
+          <i
+            className="material-icons"
+            style={{ filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))" }}
+          ></i>
         </div>
-        
-      </div>
-      <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-        <a
-          href="#"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Watch
-        </a>
-      </div>
-    </div>
-  </div>
-    
-    <div className="  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-       <img src={Image} alt="" />
-      </a>
-      <div className="px-5 pb-5">
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            KGF
-          </h5>
-        </a>
-        <div className="flex items-center mt-2.5 mb-5">
-          <div className="flex items-center space-x-1 rtl:space-x-reverse">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-4 h-4 text-yellow-300"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                />
-              </svg>
-            ))}
-            <svg
-              className="w-4 h-4 text-gray-200 dark:text-gray-600"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375 a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2 a1.523 1.523 0 0 0 .387-1.575Z"
-              />
-            </svg>
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-              5.0
-            </span>
+        <Link to="/Details">
+          <div
+            className="h-[240px] bg-center bg-cover rounded-t-lg transition-all duration-300 hover:scale-105 hover:opacity-90"
+            style={{
+              backgroundImage:
+                'url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg")',
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%)",
+            }}
+          >
+            {" "}
           </div>
-          
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-          <a
-            href="#"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Watch
-          </a>
-        </div>
-      </div>
-    </div>
+          {children}
+        </Link>
 
-
-    <div className="  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-       <img src={Image} alt="" />
-      </a>
-      <div className="px-5 pb-5">
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            KGF
-          </h5>
-        </a>
-        <div className="flex items-center mt-2.5 mb-5">
-          <div className="flex items-center space-x-1 rtl:space-x-reverse">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-4 h-4 text-yellow-300"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                />
-              </svg>
-            ))}
-            <svg
-              className="w-4 h-4 text-gray-200 dark:text-gray-600"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375 a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2 a1.523 1.523 0 0 0 .387-1.575Z"
-              />
-            </svg>
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-              5.0
-            </span>
+        <div className="p-3 text-justify text-[#e7e7e7]">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-3xl">Interstellar</h2>
           </div>
-          
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-          <a
-            href="#"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Watch
-          </a>
+
+          <div className="flex justify-between items-center my-3">
+            <h5 className="text-sm">SUMMARY</h5>
+            <ul className="flex space-x-2 text-[#fe4141]">
+              <li className="flex items-center gap-1">
+                <FaSmile className="text-[#fe4141]" />2
+              </li>
+              <li className="flex items-center gap-1">
+                <AiOutlineLike className="text-[#fe4141]" />3
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-xs  text-gray-400 ">
+            A group of elderly people are giving interviews about having lived
+            in a climate of crop blight and constant dust reminiscent of the
+            Great Depression of the 1930s.
+          </p>
+
+          <div className="flex  my-4 text-sm italic text-gray-400">
+            Matthew McConaughey, Anne Hathaway, Jessica Chastain
+          </div>
+
+          <div className="flex items-center space-x-1 mt-4">
+            <div className="flex items-center px-2 py-1 border border-[#fe4141] rounded">
+              <i className="material-icons mr-2">&#xE037;</i>
+              <button className="text-sm">WATCH TRAILER</button>
+            </div>
+            <div className="flex space-x-2 text-[#fe4141] text-3xl">
+              <i className="material-icons">&#xE161;</i>
+              <i className="material-icons">&#xE866;</i>
+              <i className="material-icons">&#xE80D;</i>
+            </div>
+          </div>
         </div>
       </div>
+      {/* card end here */}
+
+      {/*card start from here  */}
+      <div className="mx-auto mt-16 w-[300px] h-[520px] bg-[#1e1b26] rounded-lg shadow-2xl relative">
+        <div className="absolute top-1 right-3 text-[#fe4141] text-4xl">
+          <i
+            className="material-icons"
+            style={{ filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))" }}
+          ></i>
+        </div>
+        <Link to="/Details">
+          <div
+            className="h-[240px] bg-center bg-cover rounded-t-lg transition-all duration-300 hover:scale-105 hover:opacity-90"
+            style={{
+              backgroundImage:
+                'url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg")',
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%)",
+            }}
+          >
+            {" "}
+          </div>
+          {children}
+        </Link>
+
+        <div className="p-3 text-justify text-[#e7e7e7]">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-3xl">Interstellar</h2>
+          </div>
+
+          <div className="flex justify-between items-center my-3">
+            <h5 className="text-sm">SUMMARY</h5>
+            <ul className="flex space-x-2 text-[#fe4141]">
+              <li className="flex items-center gap-1">
+                <FaSmile className="text-[#fe4141]" />2
+              </li>
+              <li className="flex items-center gap-1">
+                <AiOutlineLike className="text-[#fe4141]" />3
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-xs  text-gray-400 ">
+            A group of elderly people are giving interviews about having lived
+            in a climate of crop blight and constant dust reminiscent of the
+            Great Depression of the 1930s.
+          </p>
+
+          <div className="flex  my-4 text-sm italic text-gray-400">
+            Matthew McConaughey, Anne Hathaway, Jessica Chastain
+          </div>
+
+          <div className="flex items-center space-x-1 mt-4">
+            <div className="flex items-center px-2 py-1 border border-[#fe4141] rounded">
+              <i className="material-icons mr-2">&#xE037;</i>
+              <button className="text-sm">WATCH TRAILER</button>
+            </div>
+            <div className="flex space-x-2 text-[#fe4141] text-3xl">
+              <i className="material-icons">&#xE161;</i>
+              <i className="material-icons">&#xE866;</i>
+              <i className="material-icons">&#xE80D;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* card end here */}
+
+      {/*card start from here  */}
+      <div className="mx-auto mt-16 w-[300px] h-[520px] bg-[#1e1b26] rounded-lg shadow-2xl relative">
+        <div className="absolute top-1 right-3 text-[#fe4141] text-4xl">
+          <i
+            className="material-icons"
+            style={{ filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))" }}
+          ></i>
+        </div>
+        <Link to="/Details">
+          <div
+            className="h-[240px] bg-center bg-cover rounded-t-lg transition-all duration-300 hover:scale-105 hover:opacity-90"
+            style={{
+              backgroundImage:
+                'url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg")',
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%)",
+            }}
+          >
+            {" "}
+          </div>
+          {children}
+        </Link>
+
+        <div className="p-3 text-justify text-[#e7e7e7]">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-3xl">Interstellar</h2>
+          </div>
+
+          <div className="flex justify-between items-center my-3">
+            <h5 className="text-sm">SUMMARY</h5>
+            <ul className="flex space-x-2 text-[#fe4141]">
+              <li className="flex items-center gap-1">
+                <FaSmile className="text-[#fe4141]" />2
+              </li>
+              <li className="flex items-center gap-1">
+                <AiOutlineLike className="text-[#fe4141]" />3
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-xs  text-gray-400 ">
+            A group of elderly people are giving interviews about having lived
+            in a climate of crop blight and constant dust reminiscent of the
+            Great Depression of the 1930s.
+          </p>
+
+          <div className="flex  my-4 text-sm italic text-gray-400">
+            Matthew McConaughey, Anne Hathaway, Jessica Chastain
+          </div>
+
+          <div className="flex items-center space-x-1 mt-4">
+            <div className="flex items-center px-2 py-1 border border-[#fe4141] rounded">
+              <i className="material-icons mr-2">&#xE037;</i>
+              <button className="text-sm">WATCH TRAILER</button>
+            </div>
+            <div className="flex space-x-2 text-[#fe4141] text-3xl">
+              <i className="material-icons">&#xE161;</i>
+              <i className="material-icons">&#xE866;</i>
+              <i className="material-icons">&#xE80D;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* card end here */}
+      {/*card start from here  */}
+      <div className="mx-auto mt-16 w-[300px] h-[520px] bg-[#1e1b26] rounded-lg shadow-2xl relative">
+        <div className="absolute top-1 right-3 text-[#fe4141] text-4xl">
+          <i
+            className="material-icons"
+            style={{ filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))" }}
+          ></i>
+        </div>
+        <Link to="/Details">
+          <div
+            className="h-[240px] bg-center bg-cover rounded-t-lg transition-all duration-300 hover:scale-105 hover:opacity-90"
+            style={{
+              backgroundImage:
+                'url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg")',
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0) 100%)",
+            }}
+          >
+            {" "}
+          </div>
+          {children}
+        </Link>
+
+        <div className="p-3 text-justify text-[#e7e7e7]">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-3xl">Interstellar</h2>
+          </div>
+
+          <div className="flex justify-between items-center my-3">
+            <h5 className="text-sm">SUMMARY</h5>
+            <ul className="flex space-x-2 text-[#fe4141]">
+              <li className="flex items-center gap-1">
+                <FaSmile className="text-[#fe4141]" />2
+              </li>
+              <li className="flex items-center gap-1">
+                <AiOutlineLike className="text-[#fe4141]" />3
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-xs  text-gray-400 ">
+            A group of elderly people are giving interviews about having lived
+            in a climate of crop blight and constant dust reminiscent of the
+            Great Depression of the 1930s.
+          </p>
+
+          <div className="flex  my-4 text-sm italic text-gray-400">
+            Matthew McConaughey, Anne Hathaway, Jessica Chastain
+          </div>
+
+          <div className="flex items-center space-x-1 mt-4">
+            <div className="flex items-center px-2 py-1 border border-[#fe4141] rounded">
+              <i className="material-icons mr-2">&#xE037;</i>
+              <button className="text-sm">WATCH TRAILER</button>
+            </div>
+            <div className="flex space-x-2 text-[#fe4141] text-3xl">
+              <i className="material-icons">&#xE161;</i>
+              <i className="material-icons">&#xE866;</i>
+              <i className="material-icons">&#xE80D;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* card end here */}
     </div>
-   
-    </div>
-   
   );
-}
+};
 
-export default ProductCard;
+export default Card;

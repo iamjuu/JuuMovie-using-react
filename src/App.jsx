@@ -1,17 +1,17 @@
 // App.js
-import { BrowserRouter, Route, Routes,  } from "react-router-dom";
-import Navbar from "./components/navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
-import ProductCard from './components/card'
+// import Login from "./pages/main/login";
+import Details from "./components/details";
 
 function App() {
   return (
     <BrowserRouter>
-  <Navbar/>
-  <Home/>
-  <ProductCard/>
       <Routes>
-     npm 
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path='/Details' element={<Details/>}/>
+        
       </Routes>
     </BrowserRouter>
   );
