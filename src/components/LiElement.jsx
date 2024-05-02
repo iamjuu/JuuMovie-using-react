@@ -1,14 +1,14 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
 function liItem(){
     return(
         <>
 <ul className='flex gap-10 m-3 hidden sm:flex z-10'>
-  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'>series</li>
-  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'>kids</li>
-  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'>comedies</li>
-  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'>action</li>
-  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'>Documentary</li>
+  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'> <Link to='/category/series'>series</Link> </li>
+  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'><Link to='/category/kids'>kids</Link> </li>
+  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'><Link to='/category/Comodies'>Comodies</Link> </li>
+  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'><Link to='/category/action'>Actions</Link> </li>
+  <li className='hover:text-yellow-500 transition-colors duration-300 cursor-pointer'><Link to='/Category/Documnetary'>Documentary</Link></li>
 </ul>
 
 

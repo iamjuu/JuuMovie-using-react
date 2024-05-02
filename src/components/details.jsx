@@ -1,11 +1,9 @@
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa'; // Import FontAwesome star icons
-import Background from './Background';
 
 const Details = () => {
   return (
     <div className="flex  justify-center items-center h-screen   ">
-      <Background/>
       <div className="w-[800px] h-[400px] bg-transparent rounded-lg opacity-80   transition ease-in duration-300 hover:scale-105 hover:opacity-100 shadow-lg flex ">
 
         <div className="w-[380px] overflow-hidden bg-transparent">

@@ -1,14 +1,11 @@
-import Navbar from '../components/navbar';
-import Footer from "./user/footer"
-import Card from "../components/card"
-import Background from "../components/Background";
+import Card from "../../components/card"
+
 
 const  Home=()=> {
+
   return (
     
     <div>
-   < Navbar/>
-      <Background/>
       <div className='main z-10  bg-black  opacity-45'>
         <div className='firstPage z-20'>
           <div className="flex h-screen flex-col items-center justify-center font-['Lucida_Sans_Unicode','Lucida_Grande',Verdana,Arial,Helvetica,sans-serif] text-[62.5%] leading-none opacity-100">
@@ -42,7 +39,7 @@ const  Home=()=> {
         </div>
       </div>
     <Card/>
-      <Footer/>
+
     </div>
   );
 }
