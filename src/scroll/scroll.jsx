@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+const ScrollToTop = () => {
+  const { pathname } = useLocation(); // Get the current route path
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top whenever the pathname changes
-  }, [pathname]);
+    // Scroll to the top of the page when the route changes
+    window.scrollTo(0, 0);
+  }, [pathname]); // Run the effect when pathname changes
 
   return null; // This component doesn't render any visible content
-}
+};
 
 export default ScrollToTop;

@@ -20,8 +20,6 @@ function Navbar(){
       </div>
       <FaBars className="w-7 flex mt-6 sm:hidden text-gray-500 mt-1 ml-2 z-10" />
 
-
-
     </div>
 
 <LiItem/>

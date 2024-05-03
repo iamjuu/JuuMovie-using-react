@@ -1,11 +1,10 @@
-import React from 'react';
-
-function Documnetary() {
+import DocumnetryVideo from "../../components/Documnetryvideo";
+function Documnetaryvideo() {
   return (
     <div>
-      
+      <DocumnetryVideo/>
     </div>
   );
 }
 
-export default Documnetary;
+export default Documnetaryvideo;

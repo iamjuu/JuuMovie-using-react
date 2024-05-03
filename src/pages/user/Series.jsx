@@ -1,13 +1,13 @@
-import React from 'react';
+import Seriesvideo from "../../components/seriesVideo";
+
+
 
 function Series() {
   return (
     <div className=''>
-
-      <h1> series</h1>
+      <Seriesvideo/>
     </div>
   );
 }
 
 export default Series;
-<h1> series</h1>

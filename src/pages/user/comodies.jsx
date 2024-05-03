@@ -1,12 +1,11 @@
-import React from 'react';
-
-function comodies() {
+import ComodyVideo from "../../components/Comodyvideo"
+function comodiesvideo() {
   return (
     <div>
-      <h1>comodies</h1>
+      <ComodyVideo/>
     </div>
   );
 }
 
-export default comodies;
+export default comodiesvideo;
 <h1>comodies</h1>

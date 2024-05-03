@@ -1,9 +1,10 @@
-import React from 'react';
+import Actionvideo from "../../components/Actionvideo";
+
 
 function Action() {
   return (
     <div>
-      
+      <Actionvideo/>
     </div>
   );
 }

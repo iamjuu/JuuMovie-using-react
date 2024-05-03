@@ -1,13 +1,12 @@
-import React from 'react';
+import Kidvideo from "../../components/Kidvideo"
 
-function Kids() {
+function KidsVideo() {
   return (
     <div>
-        <h1>my kids</h1>
-      
+     <Kidvideo/>
     </div>
   );
 }
 
-export default Kids;
+export default KidsVideo;
 
