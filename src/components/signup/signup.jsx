@@ -1,7 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-
+import { useDispatch } from 'react-redux';
+import { saveFormData } from '../../redux/action';
 
 const validationSchema = Yup.object({
     Email: Yup.string().email('Invalid email address').required('Required'),
@@ -11,6 +12,9 @@ const validationSchema = Yup.object({
 
 
   const Signupform =()=>{
+
+    const dispatch = useDispatch();
+
     return (
         <div  className="flex justify-center items-center min-h-screen ">
 <div className="w-full max-w-md p-8 rounded-lg shadow-md bg-white bg-opacity-5  ">
@@ -18,10 +22,12 @@ const validationSchema = Yup.object({
 <Formik  initialValues={{ email: '', password: '',phone:'',ConfirmPassword:'' }}
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting }) => {
+
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
             }, 400);
+            dispatch(saveFormData(values));
           }}>
 
           
@@ -67,6 +73,28 @@ const validationSchema = Yup.object({
                 />
                 <ErrorMessage
                   name="Email"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-white font-semibold"
+                >
+                  {" "}
+                  {/* Email field */}
+                  phone
+                </label>
+                <Field
+                  type="phone"
+                  name="phone"
+                  className="mt-1  block w-full   rounded-md py-2 px-3 text-white focus:outline-none focus:border-red-500  bg-white bg-opacity-20 backdrop-blur-lg"
+                />
+                <ErrorMessage
+                  name="phone"
                   component="div"
                   className="text-red-500 text-sm mt-1"
                 />
