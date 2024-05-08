@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useMovies } from '../../Context/movieContext';
+
 
 // Define the validation schema with Yup
 const movieValidationSchema = Yup.object({
@@ -11,21 +13,15 @@ const movieValidationSchema = Yup.object({
   genre: Yup.string().required('Genre is required'),
   rating: Yup.number().min(0).max(10).required('Rating must be between 0 and 10'),
   description: Yup.string().required('Description is required'),
-  poster: Yup.mixed()
-    .required('Poster is required')
-    .test(
-      'fileType',
-      'Unsupported file type. Only JPG and PNG are allowed.',
-      (value) => value && ['image/jpeg', 'image/png'].includes(value.type) // Validates file type
-    )
-    .test(
-      'fileSize',
-      'File is too large. Maximum size is 2MB.',
-      (value) => !value || (value.size <= 2 * 1024 * 1024) // Validates file size (maximum 2MB)
-    ),
+  poster: Yup.string().url('invalid url').required('Description is required'),
 });
 
 const AdminAddMovieForm = () => {
+  const { addMovie } = useMovies();
+  const handleSubmit =(values)=>{
+   
+    addMovie(values)
+  }
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
@@ -38,17 +34,12 @@ const AdminAddMovieForm = () => {
             genre: '',
             rating: '',
             description: '',
-            poster: null,
+            poster: '',
           }}
-          validationSchema={movieValidationSchema}
-          onSubmit={(values, { setSubmitting }) => {
-            // Handle form submission logic here
-            console.log('Form data:', values);
-            setSubmitting(false); // Simulate async behavior
-            alert('Movie added successfully!');
-          }}
+          // validationSchema={movieValidationSchema}
+          onSubmit={handleSubmit}
         >
-          {({ isSubmitting, setFieldValue }) => (
+          {() => (
             <Form className="space-y-6">
               <div>
                 <label htmlFor="title" className="block text-gray-700 font-semibold">
@@ -159,10 +150,9 @@ const AdminAddMovieForm = () => {
                 <label htmlFor="poster" className="block text-gray-700 font-semibold">
                   Movie Poster
                 </label>
-                <input
-                  type="file"
+                <Field
+                  type="text"
                   name="poster"
-                  onChange={(e) => setFieldValue('poster', e.currentTarget.files[0])}
                   className="mt-1 block w/full border border-gray-300 rounded-md py-2 px-3"
                 />
                 <ErrorMessage
@@ -174,10 +164,7 @@ const AdminAddMovieForm = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className={`w/full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md ${
-                  isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600 focus:bg-blue-600'
-                }`}
+                className={`w/full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md `}
               >
                 Add Movie
               </button>

@@ -10,6 +10,10 @@ const validationSchema = Yup.object({
 
   });
 
+  const getUsers=()=>{
+    const users=localStorage.getItem('formData')
+    return users?JSON.parse(users):[]
+  }
 
   const Signupform =()=>{
 
@@ -19,7 +23,7 @@ const validationSchema = Yup.object({
         <div  className="flex justify-center items-center min-h-screen ">
 <div className="w-full max-w-md p-8 rounded-lg shadow-md bg-white bg-opacity-5  ">
 
-<Formik  initialValues={{ email: '', password: '',phone:'',ConfirmPassword:'' }}
+<Formik  initialValues={{ Email: '', password: '',phone:'',ConfirmPassword:'' }}
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting }) => {
 
@@ -27,6 +31,9 @@ const validationSchema = Yup.object({
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
             }, 400);
+            const users=getUsers()
+            users.push(values)
+            localStorage.setItem('formData',JSON.stringify(users))
             dispatch(saveFormData(values));
           }}>
 
@@ -40,7 +47,6 @@ const validationSchema = Yup.object({
                   className="block text-white font-semibold"
                 >
                   {" "}
-                  {/* Email field */}
                   Username
                 </label>
                 <Field
@@ -63,7 +69,6 @@ const validationSchema = Yup.object({
                   className="block text-white font-semibold"
                 >
                   {" "}
-                  {/* Email field */}
                   Email
                 </label>
                 <Field
@@ -85,7 +90,6 @@ const validationSchema = Yup.object({
                   className="block text-white font-semibold"
                 >
                   {" "}
-                  {/* Email field */}
                   phone
                 </label>
                 <Field

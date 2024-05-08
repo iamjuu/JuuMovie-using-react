@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import formReducer from "./Reducer"
+import formReducer from "./Reducer";
 
 
 const saveStateToLocalStorage =(state) =>{

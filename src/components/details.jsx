@@ -1,20 +1,26 @@
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa'; // Import FontAwesome star icons
-
+import { useParams } from 'react-router-dom';
+import {useMovies} from "../Context/movieContext"
 const Details = () => {
+  const {movieId}=useParams()
+  const {movies}= useMovies()
+  console.log(movies);
+  const findMovie= movies.find((m)=>m.id===movieId)
+  console.log('fin:',findMovie);
   return (
     <div className="flex  justify-center items-center h-screen   ">
       <div className="w-[800px] h-[400px] bg-transparent rounded-lg opacity-80   transition ease-in duration-300 hover:scale-105 hover:opacity-100 shadow-lg flex ">
 
         <div className="w-[380px] overflow-hidden bg-transparent">
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"
+            src={findMovie.poster}
             alt="Kill Bill Poster"
             className="w-full h-auto rounded-l-lg"
           />
         </div>
         <div className="w-3/5 h-full bg-black rounded-r-lg">
-          <h1 className="text-white font-montserrat text-4xl m-8">KILL BILL: VOL. 1</h1>
+          <h1 className="text-white font-montserrat text-4xl m-8">{findMovie.title}</h1>
           <div className="pl-10 pt-2">
             <ul className="list-none flex space-x-10 text-gray-300 font-montserrat text-sm">
               <li>2003</li>
