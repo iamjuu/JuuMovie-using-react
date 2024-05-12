@@ -37,9 +37,9 @@ const Details = () => {
           </div>
           <div className="pl-10 mt-8">
             <a
-              href="https://www.youtube.com/watch?v=ot6C1ZKyiME"
+              href="https://youtu.be/rR_2ti4l3nM?si=ViyC-JYwOtO4KVGp"
               target="_blank"
-              className="text-yellow-500 border-2 border-yellow-500 font-montserrat bg-[url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/COMdoWZ.png)] bg-no-repeat bg-size-[12px] px-10 py-2 rounded transition-all duration-500 hover:text-black hover:bg-yellow-500"
+              className="text-yellow-300 border-2 border-yellow-500 font-montserrat bg-[url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/COMdoWZ.png)] bg-no-repeat bg-size-[12px] px-10 py-2 rounded transition-all duration-500 hover:text-black hover:bg-yellow-500"
             >
               WATCH TRAILER
             </a>
